@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const donorRoutes = require('./src/routes/donorRoutes'); // Update path to donor routes
-const recipientRoutes = require('./src/routes/recipientRoutes'); // Update path to recipient routes
-const bloodAvailabilityRoutes = require('./src/routes/bloodAvailabilityRoutes'); // Update path to blood availability routes
+const donorRoutes = require('./donorRoutes'); // Update path to donor routes
+const recipientRoutes = require('./recipientRoutes'); // Update path to recipient routes
+const bloodAvailabilityRoutes = require('./bloodAvailabilityRoutes'); // Update path to blood availability routes
 const dotenv = require('dotenv');
 
 dotenv.config(); // Load environment variables from .env file if available
@@ -16,7 +16,10 @@ app.use(express.json());
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err =>{ console.error('MongoDB connection error:', err)
+                  process.exit(1); 
+                 } );
+   
 
 // Use routes
 app.use('/api/donors', donorRoutes); // API route for donors
