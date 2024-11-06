@@ -1,4 +1,4 @@
-const Donor = require('../models/Donor'); // Make sure you have a Donor model
+const Donor = require('../Donor'); // Make sure you have a Donor model
 
 // Function to get available donors by blood group
 const getAvailableDonors = async (req, res) => {
