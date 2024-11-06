@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { addDonor, getDonors } = require('../controllers/donorController');
+const { addDonor, getDonors } = require('../donorController');
 
 // Define routes
 router.post('/', addDonor);  // Route to add a donor
