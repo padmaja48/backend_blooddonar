@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { addRecipient, getRecipients } = require('../controllers/recipientController');
+const { addRecipient, getRecipients } = require('../recipientController');
 
 // Define routes
 router.post('/', addRecipient);  // Route to add a recipient
