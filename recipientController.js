@@ -1,4 +1,4 @@
-const Recipient = require('../models/Recipient'); // Make sure you have a Recipient model
+const Recipient = require('../Recipient'); // Make sure you have a Recipient model
 
 // Function to add a new recipient
 const addRecipient = async (req, res) => {
